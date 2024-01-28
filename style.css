@@ -2,19 +2,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 body {
-      background-color: black;
-      /*background: linear-gradient(to bottom, black, gray);*/
+  background: rgb(167,24,24);
+  background: linear-gradient(0deg, rgba(167,24,24,1) 6%, rgba(253,45,45,1) 100%);
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
   }
 
 /*welcome message*/
 .header {
-    font-family: 'Roboto', sans-serif;/*imported - easy to read font*/
-    background-color: black;
-    color: white;
+    font-family: 'impact', sans-serif;/*imported - easy to read font*/
+    background: rgb(167,24,24);
+    background: linear-gradient(0deg, rgba(167,24,24,1) 0%, rgba(215,36,36,1) 0%, rgba(214,35,35,1) 100%);
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     font-size: 2.5em; 
     text-align: center;/*centered text*/
     margin-top: 40px;/*spacing from top*/
     padding-top: 20px; /*padding to move text down*/
+    padding-bottom: 50px;
 }
 
 
@@ -73,3 +83,10 @@ body {
     color: #6f6d6d;
     font-size: 1.5em;
   }
+
+  .logo
+  {
+    
+  }
+
+  

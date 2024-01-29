@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+
+body{
+    font-size: 15px;
+    font-family: 'Cabin', sans-serif;
+}
+
+#optionTabs{
+    position: relative;
+}
+
+.dropButton{
+    padding: 16px;  
+    border: none;   /* remove button border */
+    background-color: #dfdfdf;
+    font-size: 15px;
+    font-family: 'Cabin', sans-serif;
+    z-index: 2;
+    justify-content: space-between;
+}
+
+/* BUTTONS POSITION */
+#menu {
+    left: 10%;
+}
+
+#file {
+    left: 25%;
+}
+
+#setUp {
+    left: 40%;
+}
+
+#blacklist {
+    left: 55%;
+}
+
+#amend {
+    left: 70%;
+}
+
+#reports {
+    left: 85%;
+}
+
+.arrow{
+    height: 16px;
+    width: 16px;
+    position: relative;
+    top: 5px;
+    z-index: 2;
+}
+
+.dropdownTab:hover .arrow{
+    transform: rotate(90deg);   /* rotate arrow when hovered */ 
+}
+
+
+/* links */
+.first{
+    padding-top: 10px;
+    top: -25px;
+    width: 100%;
+
+}
+
+.second{
+    padding-top: 10px;
+    top: 40px;
+    width: 100%;
+
+}
+
+.third{
+    padding-top: 10px;
+    top: 105px;
+    width: 100%;
+
+}
+
+.links
+{
+    position: relative;
+    display: none;  /* none by default so its  hidden */
+    height: 180px;
+    width: 100%;
+    top: 15px;
+    background-color: #dfdfdf;
+    box-shadow: 2px 2px 3px 2px rgb(0 0 0 / 20%);
+    z-index: 3;
+
+}
+
+.dropdownTab {
+    display: inline-block;  /* keep it same line but blocks*/ 
+    margin: 30px;       /* spacing */
+    position: absolute;     
+    left: 30%;  /* top right side of page */ 
+    z-index: 3;
+}
+
+/* links */
+.links a {
+    color: black;   
+    text-decoration: none;      /*remove purple and underline */
+    display: block;             /* block so its stacks ontop of each other */
+    position: absolute;     /* makes sure it doesnt move other elements */
+    text-align: center;
+    margin-top: 25px;
+    background-color: #dfdfdf;
+    height: 40px;
+}
+
+.links a:hover{
+    background-color: #afafaf;
+}
+  
+
+.dropdownTab:hover .links{
+    display: block;
+    z-index: 9;   
+}
+
+
+.navBar{
+    position: absolute;
+    width: 110%;
+    height: 140px;
+    background-color: #dfdfdf;
+    display: inline-block;
+    top: -40px;
+    left: -50px;    /*so theres isnt agap on the top and left margin */
+    z-index: 1;
+    margin: 10px;
+}
+
+.logReg{
+    position: absolute;
+    right: 30px;
+    outline: none;
+    border: none;
+    width: 80px;
+    height: 30px;
+    margin: 10px;
+    display: block;
+    border-radius: 4px;
+    box-shadow: 2px 2px 2px 2px rgba(165, 163, 163, 0.767);
+    z-index: 3;
+}
+
+#login{
+    top: 50px;
+    background-color: #A1D2F8;
+}
+
+#register{
+    top: 0px;
+    background-color: #D4F1F8;
+}
+
+#login:hover{
+    background-color: #7aa0bd;
+}
+
+#register:hover{
+    background-color: #a5bbc0;
+}
+
+.slideContainer{
+    position:absolute;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    top: 200px;
+    justify-content: space-evenly;
+    width: 100%;
+    align-items: center;
+
+}
+
+.slidesImg{
+    height: 80%;
+    width: 400px;
+    margin: 20px;
+    box-shadow: 2px 2px 2px 2px rgba(165, 163, 163, 0.767);
+}
+
+.slide{
+    background-color: #afafaf;
+}

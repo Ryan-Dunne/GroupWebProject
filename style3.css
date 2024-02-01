@@ -28,8 +28,8 @@ body {
     border: 6px solid #2B7A78;
     width: 600px;
     padding: 20px;
-    background: linear-gradient(to top, white,#3AAFA9);
-
+    /*background: linear-gradient(to top, white,#3AAFA9);*/
+    background: linear-gradient(to top, #bfeeeb, #19aca4);
     border-radius: 10px;/*rounded edges*/
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);/*shadow effect*/
     text-align: center;
@@ -38,6 +38,7 @@ body {
     left:50%;
     transform: translate(-50%, -50%);/*centered*/
     margin-top: 200px;
+   padding-bottom: 20px;
   
   }
 
@@ -52,7 +53,6 @@ body {
   
   .menu h2 {
     font-family: 'Roboto', sans-serif;
-    
     color: #DEF2F1;
     font-size: 3em;
     font-weight: bolder;
@@ -96,12 +96,14 @@ body {
   }
 
 
-
-
-
-
-
-
+/*import question mark logo and this can be used as a help button*/
+img {
+  position:fixed;
+  top:10px;
+  right:20px;
+  width:60px;
+  height:60px;
+}
 
 
 

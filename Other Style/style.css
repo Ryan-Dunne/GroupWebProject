@@ -9,19 +9,48 @@ body{
     position: relative;
 }
 
+
+
 .dropButton{
+    display: inline-block;
+    position: relative;
     padding: 16px;  
     border: none;   /* remove button border */
     background-color: #dfdfdf;
     font-size: 15px;
     font-family: 'Cabin', sans-serif;
     z-index: 2;
-    justify-content: space-between;
+    margin: 20px;
 }
 
-/* BUTTONS POSITION */
+
+#menuButton {
+    left: calc(10% + (100% - 600px) / 2);
+}
+
+#fileButton {
+    left: calc(25% + (100% - 600px) / 2);
+}
+
+#setupButton {
+    left: calc(40% + (100% - 600px) / 2);
+}
+
+#blacklistButton {
+    left: calc(55% + (100% - 600px) / 2);
+}
+
+#amendButton {
+    left: calc(70% + (100% - 600px) / 2);
+}
+
+#reportsButton {
+    left: calc(85% + (100% - 600px) / 2);
+}
+
+ /*BUTTONS POSITION  */
 #menu {
-    left: 10%;
+    left: 20%;
 }
 
 #file {
@@ -52,44 +81,48 @@ body{
     z-index: 2;
 }
 
-.dropdownTab:hover .arrow{
+.dropButton:hover .arrow{
     transform: rotate(90deg);   /* rotate arrow when hovered */ 
 }
 
-
-/* links */
-.first{
-    padding-top: 10px;
-    top: -25px;
-    width: 100%;
-
-}
-
-.second{
-    padding-top: 10px;
-    top: 40px;
-    width: 100%;
-
-}
-
-.third{
-    padding-top: 10px;
-    top: 105px;
-    width: 100%;
-
-}
-
-.links
+.menu
 {
-    position: relative;
     display: none;  /* none by default so its  hidden */
-    height: 180px;
-    width: 100%;
-    top: 15px;
-    background-color: #dfdfdf;
-    box-shadow: 2px 2px 3px 2px rgb(0 0 0 / 20%);
     z-index: 3;
+    border: 6px solid #333;
+    width: 600px;
+    height: 500px;
+    padding: 20px;
+    background: rgba(109, 175, 172, 0.9); /* Dark grey background for menu box */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    position: absolute;
+    top: 350px;
+    left: translate(100%, 100%);
+    transform: translate(-50%, -50%);
+    margin-top: 25px;
+    
 
+}
+
+.menu ul {
+    list-style-type: none;/*remove bullets*/
+    padding: 0;
+  }
+
+.menu li {
+    margin: 20px;/*spacing between links*/
+    position: relative;
+  }
+  
+.menu h2 {
+    font-family: 'Roboto', sans-serif;
+    background: #6dafac;
+    color: #fff;
+    font-size: 2.5em;
+    padding: 10px;
+    margin: 10;
 }
 
 .dropdownTab {
@@ -98,26 +131,34 @@ body{
     position: absolute;     
     left: 30%;  /* top right side of page */ 
     z-index: 3;
+
 }
 
 /* links */
-.links a {
-    color: black;   
+.menu a {
+    font-size: 1.5em;
+    color: #6f6d6d;  
     text-decoration: none;      /*remove purple and underline */
     display: block;             /* block so its stacks ontop of each other */
-    position: absolute;     /* makes sure it doesnt move other elements */
+    position: relative;     /* relative so its doesnt go directly ontop of each other*/
     text-align: center;
     margin-top: 25px;
     background-color: #dfdfdf;
     height: 40px;
+    transition: background-color 0.3s ease;/*tranasition effect*/
+    width: 400px;/*width of links are uniform*/
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
-.links a:hover{
-    background-color: #afafaf;
+.menu a:hover{
+    background-color:#bbc9c8;
+    color: #6f6d6d;
+    font-size: 1.5em;
 }
   
 
-.dropdownTab:hover .links{
+.dropdownButton:hover .menu{
     display: block;
     z-index: 9;   
 }

@@ -1,5 +1,9 @@
-<!--HTML FOR HOMEPAGE
-CONTAINS NAVBAR AT TOP OF PAGE AND MAIN MENU IN CENTRE OF PAGE-->
+<!--HTML FOR HOME/ STARTUP SCREEN 
+CONTAINS MAIN MENU IN CENTER OF SCREEN
+LINKS ON LHS(left side) OF MENU ARE THE SCREENS WE HAVE BEEN ASSIGNED,
+LINKS ON RHS ARE SCREENS WE HAVE NOT BEEN ASSIGNED
+links to style sheet homeStyle.css -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,37 +11,38 @@ CONTAINS NAVBAR AT TOP OF PAGE AND MAIN MENU IN CENTRE OF PAGE-->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--defining the viewport to control the page's dimensions and scaling for different devices:-->
   <!-- LINKING CSS Styles sheet-->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="homeStyle.css">
   <title>GoDrive | Start-up </title>
 </head>
 
 <body>
-  <!--HEADER INCLUDES TITLE OF PAGE, LOGO, HELP BUTTON-->
+<!--HEADER INCLUDES TITLE OF PAGE, LOGO, HELP BUTTON-->
   <div class="header">
-    <h1>Welcome to GoDrive</h1>
-    <a href="help.html">
-      <img class="help-button" alt="help-button" src="helpbutton.png">
-    </a>
-    <img class="logo" alt="logo" src="godrivelogo.png">
+  <h1>Welcome to GoDrive</h1>
+  <a href="Help.html"><img class="help-button" alt="help-button" src="images/helpbutton.png"></a>
+  <img class="logo" alt="logo" src="images/godrivelogo.png">
   </div>
   
-  <!--MENU-->
-  <div class="row"> <!--opening div: row-->
-    <div class="column"><!--opening div:column-->
-      <div class="menu"><!--opening div:MENU-->
-        <h2>Main Menu</h2>
-        <ul>
-          <li><a href="Rentals.html">Rentals</a></li>
-          <li><a href="Returns.html">Returns</a></li>
-          <li><a href="AcceptPayments.html">Accept Payments</a></li>
-          <li><a href="BlacklistMenu.html">Blacklist Menu</a></li>
-          <li><a href="FileMaintenanceMenu.html">File Maintenance Menu</a></li>
-          <li><a href="SetupMenu.html">Set-Up Menu</a></li>
-          <li><a href="ReportsMenu.html">Reports Menu</a></li>
-          <li><a href="ExitPage.html">Exit</a></li>
-        </ul>
-      </div><!--closing div:menu-->
-    </div><!--closing div:column-->
-  </div><!--closing div: row-->
+<!--MENU-->
+  <div class="column"><!--opening div:column-->
+  <div class="menu"><!--opening div:MENU-->
+  <h2>Main Menu</h2>
+  	<ul>
+		<li><a href="carMenu.html">Car Menu</a></li><!--LHS-->
+		<li><a href="#">Payments</a></li><!--RHS-->
+        <li><a href="#">Car Type Menu</a></li><!--LHS-->
+		<li><a href="#">Blacklist Menu</a></li><!--RHS-->
+		<li><a href="AddCompany.html">Company Menu</a></li><!--LHS-->
+		<li><a href="#">File Maintenance Menu</a></li>
+		<li><a href="#">Rentals</a></li><!--LHS-->
+		<li><a href="#">Set-Up Menu</a></li><!--RHS-->
+		<li><a href="#">Rental Report</a></li><!--LHS-->
+		<li><a href="#">Reports Menu</a></li><!--RHS-->
+		<li><a href="#">Returns</a></li><!--LHS-->
+         <li><a href="#">Exit</a></li><!--RHS-->
+    </ul>
+  </div><!--closing div:menu-->
+  </div><!--closing div:column-->
+ 
 </body>
 </html>

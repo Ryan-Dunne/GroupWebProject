@@ -9,15 +9,14 @@
     <!-- LINKING CSS Styles sheet-->
     <link rel="stylesheet" href="AddCompany.css">
     <script src="AddCompany.js"></script>
-    <title>Rentals </title>
+    <title>Add A Company </title>
 </head>
 
 <body class="background">
     <!--HEADER-->
     <div class="header">
         <h1>Add A Company</h1>
-        <a href="Help.html">
-            <img class="help-button" alt="help-button" src="helpbutton.png" onmouseover="helpMenu()">
+            <img class="help-button" alt="help-button" src="helpbutton.png" onclick="helpMenu()">
         </a>
         <img class="logo" alt="logo" src="godrivelogo.png">
     </div>
@@ -110,28 +109,28 @@
 <!---------------------------------------------------------------------------------------------------------------->
 
 
-            <form action="AddCompany.php"class ="form" method="post">
+            <form action="AddCompany.php"class ="form" method="post"  onsubmit="return confirmSubmit()">
 
                 <label for="company">Company name:</label><br>
-                <input type="text" id="company" name="company" required placeholder="Company Name"><br>
+                <input type="text" id="company" name="company" placeholder="Company Name" required pattern="[a-z\- A-Z0-9]{2,}"><br>
 
                 <label for="address">Company Address:</label><br>
-                <input type="text" id="address" name="address" required placeholder="123 Maple Road, Carlow"><br>
+                <input type="text" id="address" name="address" placeholder="123 Maple Road, Carlow" required pattern="[0-9a-z\-, A-Z]{6,}"><br>
 
                 <label for="tele">Company Telephone No:</label><br>
-                <input type="tel" id="tele" name="tele" placeholder="(353)0852841923" required pattern="[0-9]({7,}"><br>
+                <input type="tel" id="tele" name="tele" placeholder="(353)0852841923" required pattern="[0-9\(\)\-]{7,}"><br>
 
                 <label for="web">Company Web Address:</label><br>
                 <input type="text" id="web" name="web" pattern="[A-Za-z0-9.\-]+\.[a-z]{2,}$"><br>
 
                 <label for="email">Company Email Address:</label><br>
-                <input type="email" id="email" name="email" required pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}"><br>
+                <input type="email" id="email" name="email" required pattern="[a-zA-Z0-9._%+\-]+@[a-z0-9.\-]+\.[a-zA-Z]{2,}"><br>
 
                 <label for="text">Company Credit Limit:</label><br>
                 <input type="text" id="credit" name="credit" value="1000" required pattern="[0-9]{1,}"><br>
 
 
-                <input type="Submit" value="Submit">       <input type="reset" id="reset" value="Clear">
+                <input type="Submit" value="Submit"> <input type="reset" id="reset" value="Clear">
 
             </form>
 

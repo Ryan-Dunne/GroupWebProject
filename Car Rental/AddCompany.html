@@ -12,7 +12,7 @@
     <title>Rentals </title>
 </head>
 
-<body class="background" onload="generateNumber()">
+<body class="background">
     <!--HEADER-->
     <div class="header">
         <h1>Add A Company</h1>
@@ -130,10 +130,8 @@
                 <label for="text">Company Credit Limit:</label><br>
                 <input type="text" id="credit" name="credit" required value="1000"><br>
 
-                <label for="id">Your Generated Company ID:</label><br>
-                <input type="text" id="id" name="id" required readonly><br>
 
-                <input type="Submit" value="Submit">       <input type="button" id="reset" value="Clear" onclick="resetForm()">
+                <input type="Submit" value="Submit">       <input type="reset" id="reset" value="Clear">
 
             </form>
 

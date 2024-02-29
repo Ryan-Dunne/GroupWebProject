@@ -119,16 +119,16 @@
                 <input type="text" id="address" name="address" required placeholder="123 Maple Road, Carlow"><br>
 
                 <label for="tele">Company Telephone No:</label><br>
-                <input type="tel" id="tele" name="tele" required placeholder="(353)0852841923"><br>
+                <input type="tel" id="tele" name="tele" placeholder="(353)0852841923" required pattern="[0-9]({7,}"><br>
 
                 <label for="web">Company Web Address:</label><br>
-                <input type="text" id="web" name="web"><br>
+                <input type="text" id="web" name="web" pattern="[A-Za-z0-9.\-]+\.[a-z]{2,}$"><br>
 
                 <label for="email">Company Email Address:</label><br>
-                <input type="email" id="email" name="email" required><br>
+                <input type="email" id="email" name="email" required pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}"><br>
 
                 <label for="text">Company Credit Limit:</label><br>
-                <input type="text" id="credit" name="credit" required value="1000"><br>
+                <input type="text" id="credit" name="credit" value="1000" required pattern="[0-9]{1,}"><br>
 
 
                 <input type="Submit" value="Submit">       <input type="reset" id="reset" value="Clear">

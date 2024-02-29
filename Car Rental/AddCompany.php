@@ -5,6 +5,7 @@ echo "The details sent down are: <br>";
 
 echo "Your Company unique ID is: " . $_POST['id'] . "<br>";
 echo "Company name: " . $_POST['company'] . "<br>";
+echo "Company Tele: " . $_POST['tele'] . "<br>";
 echo "Address: " . $_POST['address'] . "<br>";
 echo "Company Balance: " . $_POST['balance'] . "<br>";
 echo "Company Credit: " . $_POST['credit'] . "<br>";

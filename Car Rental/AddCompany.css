@@ -97,7 +97,7 @@ body {
   padding: 20px 0;/*making navbar thicker*/
   display: flex;
   justify-content: space-around;
-  margin-top: -35px; /*moves navbar up by pixels*/
+  margin-top: -70px; /*moves navbar up by pixels*/
 }
 
 .navbar a {

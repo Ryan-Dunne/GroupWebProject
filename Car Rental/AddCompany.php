@@ -25,7 +25,7 @@ function generateID()
 
    $id = rand(0,1000000);
    $sql = "SELECT * FROM company WHERE CompanyID = $id";
-   if(mysqli_query($con,$sql) != null)
+   while(mysqli_query($con,$sql) != null)
    {
    $id = rand(0,1000000);
    }

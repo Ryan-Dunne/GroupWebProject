@@ -115,7 +115,7 @@
                 <input type="text" id="company" name="company" placeholder="Company Name" required pattern="[a-z\- A-Z0-9]{2,}"><br>
 
                 <label for="address">Company Address:</label><br>
-                <input type="text" id="address" name="address" placeholder="123 Maple Road, Carlow" required pattern="[0-9a-z\-, A-Z]{6,}"><br>
+                <input type="text" id="address" name="address" placeholder="123 Maple Road Carlow" required pattern="[0-9a-z\- A-Z]{6,}"><br>
 
                 <label for="tele">Company Telephone No:</label><br>
                 <input type="tel" id="tele" name="tele" placeholder="(353)0852841923" required pattern="[0-9\(\)\-]{7,}"><br>
@@ -127,7 +127,7 @@
                 <input type="email" id="email" name="email" required pattern="[a-zA-Z0-9._%+\-]+@[a-z0-9.\-]+\.[a-zA-Z]{2,}"><br>
 
                 <label for="text">Company Credit Limit:</label><br>
-                <input type="text" id="credit" name="credit" value="1000" required pattern="[0-9]{1,}"><br>
+                <input type="number" id="credit" name="credit" value="1000" min="0"required pattern="[0-9]{1,}"><br>
 
 
                 <input type="Submit" value="Submit"> <input type="reset" id="reset" value="Clear">

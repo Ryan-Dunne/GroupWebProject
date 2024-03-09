@@ -338,11 +338,8 @@ footer {
   margin-right: auto;
   margin-top: 20px;
   margin-bottom: 20px;
-<<<<<<< HEAD
-  width: 40%;
-=======
   width: 35%;
->>>>>>> 962bf23da16947d206dd6cefc02ab614bee958e1
+
   height: auto;
   border: 3px solid black;
   padding: 10px;
@@ -422,5 +419,12 @@ footer {
 .background
 {
   background: linear-gradient(to top, #bfeeeb, #19aca4);
+}
+
+.popupmsg
+{
+  color: red;
+  font-size: larger;
+  margin-left: 43%;
 }
 

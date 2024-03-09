@@ -1,13 +1,15 @@
 <?php
 include 'db.inc';
+include 'AddCompany.html.php';
+session_start();
 date_default_timezone_set("UTC");
-// echo "The details sent down are: <br>";
 
 $companyID = generateID();
+$companyName = $_SESSION['company'];
 
 
 $sql = "Insert into company (CompanyID,CompanyName,Address,Telephone,WebAddress,EmailAddress,CreditLimit)
-VALUES ('$companyID','$_POST[company]','$_POST[address]','$_POST[tele]','$_POST[web]','$_POST[email]','$_POST[credit]')";
+VALUES ('$companyID','$companyName','$_SESSION[address]','$_SESSION[tele]','$_SESSION[web]','$_SESSION[email]','$_SESSION[credit]')";
 
 if (!mysqli_query($con,$sql))
 {
@@ -25,7 +27,7 @@ function generateID()
 
    $id = rand(0,1000000);
    $sql = "SELECT * FROM company WHERE CompanyID = $id";
-   while(mysqli_query($con,$sql) != null)
+   while(mysqli_query($con,$sql) == $id)
    {
    $id = rand(0,1000000);
    }

@@ -1,13 +1,8 @@
 <!--HTML SHEET FOR ADDING A COMPANY-->
 <!DOCTYPE html>
 <html lang="en">
-
 <?php
-$message = "";
-if(isset($_POST['SubmitButton'])){ //check if form was submitted
-  $input = $_POST['inputText']; //get input text
-  $message = "Success! You entered: ".$input;
-}    
+session_start(); 
 ?>
 <head>
     <meta charset="utf-8"> <!--specifying character encoding for html docu-->
@@ -116,33 +111,46 @@ if(isset($_POST['SubmitButton'])){ //check if form was submitted
 <!---------------------------------------------------------------------------------------------------------------->
 
 
-            <form action="AddCompany.php"class ="form" method="post"  onsubmit="return confirmSubmit()">
+            <form action="AddCompany.php" class="form" method="POST"  onsubmit="return confirmSubmit()">
 
                 <label for="company">Company name:</label><br>
-                <input type="text" id="company" name="company" placeholder="Company Name" required pattern="[a-z\- A-Z0-9]{2,}" title="Enter your Companie's name"><br>
+                <input type="text" id="company" name="company" placeholder="Company Name" required pattern="[a-z\- A-Z0-9]{2,}"><br>
 
                 <label for="address">Company Address:</label><br>
-                <input type="text" id="address" name="address" placeholder="123 Maple Road, Carlow" required pattern="[0-9a-zA-Z '\.\-\s\,]{6,}"><br>
+                <input type="text" id="address" name="address" placeholder="123 Maple Road Carlow" required pattern="[0-9a-z\- A-Z]{6,}"><br>
 
                 <label for="tele">Company Telephone No:</label><br>
-                <input type="tel" id="tele" name="tele" placeholder="(353)0852841923" required pattern="[0-9\(\)\-]{7,}" title="Your Country's number prefix & your number"><br>
+                <input type="tel" id="tele" name="tele" placeholder="(353)0852841923" required pattern="[0-9\(\)\-]{7,}"><br>
 
                 <label for="web">Company Web Address:</label><br>
-                <input type="text" id="web" name="web" pattern="[A-Za-z0-9.\-]+\.[a-z]{2,}$" placeholder="YourCompanyWebsite.com"><br>
+                <input type="text" id="web" name="web" pattern="[A-Za-z0-9.\-]+\.[a-z]{2,}$"><br>
 
                 <label for="email">Company Email Address:</label><br>
-                <input type="email" id="email" name="email" required pattern="[a-zA-Z0-9._%+\-]+@[a-z0-9.\-]+\.[a-zA-Z]{2,}" placeholder="YourCompany@website.com"><br>
+                <input type="email" id="email" name="email" required pattern="[a-zA-Z0-9._%+\-]+@[a-z0-9.\-]+\.[a-zA-Z]{2,}"><br>
 
                 <label for="text">Company Credit Limit:</label><br>
                 <input type="number" id="credit" name="credit" value="1000" min="0"required pattern="[0-9]{1,}"><br>
 
 
-                <input type="Submit" value="Submit"> <input type="reset" id="reset" value="Clear">
-
+                <input type="Submit" value="Submit" id="Submit" name="Submit"> <input type="reset" id="reset" value="Clear">
             </form>
 
 
         </div>
+
+                <?php
+                if(isset($_POST['Submit'])) //check if form was submitted
+                { 
+                    $_SESSION['company']=$_POST['company'];
+                    $_SESSION['address']=$_POST['address'];
+                    $_SESSION['tele']=$_POST['tele'];
+                    $_SESSION['web']=$_POST['web'];
+                    $_SESSION['email']=$_POST['email'];
+                    $_SESSION['credit']=$_POST['credit'];
+
+                    echo"<p class=popupmsg>A record has been added for: " . $_SESSION['company'] . "</p>";
+
+                }?>   
     </div>
 
 </body>

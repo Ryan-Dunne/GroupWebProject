@@ -17,7 +17,7 @@ if (!mysqli_query($con,$sql))
 }
 
 
-
+Session_unset();
 mysqli_close($con);
 
 

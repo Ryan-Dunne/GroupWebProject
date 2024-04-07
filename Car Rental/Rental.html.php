@@ -1,31 +1,27 @@
 <!--HTML SHEET FOR ADDING A COMPANY-->
 <!DOCTYPE html>
 <html lang="en">
-
 <?php
-$message = "";
-if(isset($_POST['SubmitButton'])){ //check if form was submitted
-  $input = $_POST['inputText']; //get input text
-  $message = "Success! You entered: ".$input;
-}    
+include 'db.inc.php';
+session_start(); 
 ?>
 <head>
     <meta charset="utf-8"> <!--specifying character encoding for html docu-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--defining the viewport to control the page's dimensions and scaling for different devices:-->
     <!-- LINKING CSS Styles sheet-->
-    <link rel="stylesheet" href="AddCompany.css">
-    <script src="AddCompany.js"></script>
-    <title>Add A Company </title>
+    <link rel="stylesheet" href="css/Rental.css">
+    <script src="Rental.js"></script>
+    <title>Delete A Company </title>
 </head>
 
 <body class="background">
     <!--HEADER-->
     <div class="header">
-        <h1>Add A Company</h1>
-            <img class="help-button" alt="help-button" src="helpbutton.png" onclick="helpMenu()">
+        <h1>Rentals</h1>
+            <img class="help-button" alt="help-button" src="images/helpbutton.png" onclick="helpMenu()">
         </a>
-        <img class="logo" alt="logo" src="godrivelogo.png">
+        <img class="logo" alt="logo" src="images/godrivelogo.png">
     </div>
     <!--NAVIGATION BAR -->
     <div class="navbar">
@@ -34,7 +30,7 @@ if(isset($_POST['SubmitButton'])){ //check if form was submitted
 
         <div class="dropdown">
             <button class="dropbtn">Rentals
-                <img class="arrow" src="arrow.png">
+                <img class="arrow" src="images/arrow.png">
             </button>
             <div class="dropdown-content">
                 <a href="#">Link 1</a>
@@ -45,7 +41,7 @@ if(isset($_POST['SubmitButton'])){ //check if form was submitted
 
         <div class="dropdown">
             <button class="dropbtn">Returns
-                <img class="arrow" src="arrow.png">
+                <img class="arrow" src="images/arrow.png">
             </button>
             <div class="dropdown-content">
                 <a href="#">Link 1</a>
@@ -56,7 +52,7 @@ if(isset($_POST['SubmitButton'])){ //check if form was submitted
 
         <div class="dropdown">
             <button class="dropbtn">Accept Payments
-                <img class="arrow" src="arrow.png">
+                <img class="arrow" src="images/arrow.png">
             </button>
             <div class="dropdown-content">
                 <a href="#">Link 1</a>
@@ -67,7 +63,7 @@ if(isset($_POST['SubmitButton'])){ //check if form was submitted
 
         <div class="dropdown">
             <button class="dropbtn">Blacklist Menu
-                <img class="arrow" src="arrow.png">
+                <img class="arrow" src="images/arrow.png">
             </button>
             <div class="dropdown-content">
                 <a href="#">Link 1</a>
@@ -78,7 +74,7 @@ if(isset($_POST['SubmitButton'])){ //check if form was submitted
 
         <div class="dropdown">
             <button class="dropbtn">Reports Menu
-                <img class="arrow" src="arrow.png">
+                <img class="arrow" src="images/arrow.png">
             </button>
             <div class="dropdown-content">
                 <a href="#">Link 1</a>
@@ -89,18 +85,19 @@ if(isset($_POST['SubmitButton'])){ //check if form was submitted
 
         <div class="dropdown">
             <button class="dropbtn">File Maintenance Menu
-                <img class="arrow" src="arrow.png">
+                <img class="arrow" src="images/arrow.png">
             </button>
             <div class="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
+                <a href="AddCompany.html.php">Add a Company</a>
+                <a href="AmendViewCompany.html.php">Amend a Company</a>
+                <a href="DeleteCompany.html.php">Delete a Company</a>
+                <a href="Rental.html.php">Rentals</a>
             </div><!--close dropdown-content-->
         </div><!--close dropdown-->
 
         <div class="dropdown">
             <button class="dropbtn">Set-Up
-                <img class="arrow" src="arrow.png">
+                <img class="arrow" src="images/arrow.png">
             </button>
             <div class="dropdown-content">
                 <a href="#">Link 1</a>
@@ -109,42 +106,65 @@ if(isset($_POST['SubmitButton'])){ //check if form was submitted
             </div><!--close dropdown-content-->
         </div><!--close dropdown-->
 
-        <a href="#exit">Exit <img class="exit-icon" src="exit_icon.png" alt="Exit icon"></a>
+        <a href="#exit">Exit <img class="exit-icon" src="images/exit_icon.png" alt="Exit icon"></a>
     </div><!--close navbar-->
 
 
 <!---------------------------------------------------------------------------------------------------------------->
 
+<?php include 'RentalCompanyListbox.php'; ?>  <!--Includes listbox file -->
+<script>
+    populate();
+</script>
 
-            <form action="AddCompany.php"class ="form" method="post"  onsubmit="return confirmSubmit()">
+<p id ="display"> </p>
 
-                <label for="company">Company name:</label><br>
-                <input type="text" id="company" name="company" placeholder="Company Name" required pattern="[a-z\- A-Z0-9]{2,}" title="Enter your Companie's name"><br>
+<br><br>
+    <form>
+    <input type="text" id ="carID">
+    <label for="carID">Selected Car</label>
+    <input type="text" id ="carReg">
+    <input type="submit" value="Choose Car" id="chooseCompany" name="chooseCompany" onclick="submitFields()">
+    <form>
+    <br><br>
 
-                <label for="address">Company Address:</label><br>
-                <input type="text" id="address" name="address" placeholder="123 Maple Road, Carlow" required pattern="[0-9a-zA-Z '\.\-\s\,]{6,}"><br>
+<form name = "myForm" class="form" action="Rental.html.php" method="POST">  <!--Calls confirmCheck() & Sends values to AmendView.php if true -->
 
-                <label for="tele">Company Telephone No:</label><br>
-                <input type="tel" id="tele" name="tele" placeholder="(353)0852841923" required pattern="[0-9\(\)\-]{7,}" title="Your Country's number prefix & your number"><br>
+    <input type="hidden" id="companyID" name="companyID">
 
-                <label for="web">Company Web Address:</label><br>
-                <input type="text" id="web" name="web" pattern="[A-Za-z0-9.\-]+\.[a-z]{2,}$" placeholder="YourCompanyWebsite.com"><br>
+    <label for="companyName">Company Name</label> 
+    <input type="text" name="companyName" id="companyName" disabled>       <!--Defaults all input fields as disabled -->
 
-                <label for="email">Company Email Address:</label><br>
-                <input type="email" id="email" name="email" required pattern="[a-zA-Z0-9._%+\-]+@[a-z0-9.\-]+\.[a-zA-Z]{2,}" placeholder="YourCompany@website.com"><br>
+    <label for= "companyAddress">Address</label>
+    <input type="text" name="address" id="address" disabled>
 
-                <label for="text">Company Credit Limit:</label><br>
-                <input type="number" id="credit" name="credit" value="1000" min="0"required pattern="[0-9]{1,}"><br>
+    <label for="credit">Credit Limit</label>
+    <input type="text" name="credit" id="credit" disabled>
 
-
-                <input type="Submit" value="Submit"> <input type="reset" id="reset" value="Clear">
-
-            </form>
+    <label for="amountOwed">Amount Owed</label>
+    <input type="text" name="amountOwed" id="amountOwed" disabled>
 
 
-        </div>
-    </div>
 
+    <br><br>
+
+    <input type="submit" value="Choose Company" id="chooseCompany" name="chooseCompany" onclick="submitFields()">
+    <br><br>
+
+<?php
+if(isset($_POST["chooseCompany"]))
+{
+$_SESSION['companyID'] = $_POST['companyID'];
+$_SESSION['companyName'] = $_POST['companyName'];
+$_SESSION['address'] = $_POST['address'];
+$_SESSION['credit'] = $_POST['credit'];
+$_SESSION['amountOwed'] = $_POST['amountOwed'];
+
+include 'RentalCarListboxc.php';
+}
+?>
+</form>
+
+ 
 </body>
-
 </html>

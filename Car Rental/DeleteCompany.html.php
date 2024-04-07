@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-include 'db.inc';
+include 'db.inc.php';
 session_start(); 
 ?>
 <head>
@@ -10,8 +10,8 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--defining the viewport to control the page's dimensions and scaling for different devices:-->
     <!-- LINKING CSS Styles sheet-->
-    <link rel="stylesheet" href="AddCompany.css">
-    <script src="AddCompany.js"></script>
+    <link rel="stylesheet" href="DeleteCompany.css">
+    <script src="DeleteCompany.js"></script>
     <title>Delete A Company </title>
 </head>
 
@@ -19,9 +19,9 @@ session_start();
     <!--HEADER-->
     <div class="header">
         <h1>Delete A Company</h1>
-            <img class="help-button" alt="help-button" src="helpbutton.png" onclick="helpMenu()">
+            <img class="help-button" alt="help-button" src="images/helpbutton.png" onclick="helpMenu()">
         </a>
-        <img class="logo" alt="logo" src="godrivelogo.png">
+        <img class="logo" alt="logo" src="images/godrivelogo.png">
     </div>
     <!--NAVIGATION BAR -->
     <div class="navbar">
@@ -30,7 +30,7 @@ session_start();
 
         <div class="dropdown">
             <button class="dropbtn">Rentals
-                <img class="arrow" src="arrow.png">
+                <img class="arrow" src="images/arrow.png">
             </button>
             <div class="dropdown-content">
                 <a href="#">Link 1</a>
@@ -41,7 +41,7 @@ session_start();
 
         <div class="dropdown">
             <button class="dropbtn">Returns
-                <img class="arrow" src="arrow.png">
+                <img class="arrow" src="images/arrow.png">
             </button>
             <div class="dropdown-content">
                 <a href="#">Link 1</a>
@@ -52,7 +52,7 @@ session_start();
 
         <div class="dropdown">
             <button class="dropbtn">Accept Payments
-                <img class="arrow" src="arrow.png">
+                <img class="arrow" src="images/arrow.png">
             </button>
             <div class="dropdown-content">
                 <a href="#">Link 1</a>
@@ -63,7 +63,7 @@ session_start();
 
         <div class="dropdown">
             <button class="dropbtn">Blacklist Menu
-                <img class="arrow" src="arrow.png">
+                <img class="arrow" src="images/arrow.png">
             </button>
             <div class="dropdown-content">
                 <a href="#">Link 1</a>
@@ -74,7 +74,7 @@ session_start();
 
         <div class="dropdown">
             <button class="dropbtn">Reports Menu
-                <img class="arrow" src="arrow.png">
+                <img class="arrow" src="images/arrow.png">
             </button>
             <div class="dropdown-content">
                 <a href="#">Link 1</a>
@@ -85,18 +85,19 @@ session_start();
 
         <div class="dropdown">
             <button class="dropbtn">File Maintenance Menu
-                <img class="arrow" src="arrow.png">
+                <img class="arrow" src="images/arrow.png">
             </button>
             <div class="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
+                <a href="AddCompany.html.php">Add a Company</a>
+                <a href="AmendViewCompany.html.php">Amend a Company</a>
+                <a href="DeleteCompany.html.php">Delete a Company</a>
+                <a href="Rental.html.php">Rentals</a>
             </div><!--close dropdown-content-->
         </div><!--close dropdown-->
 
         <div class="dropdown">
             <button class="dropbtn">Set-Up
-                <img class="arrow" src="arrow.png">
+                <img class="arrow" src="images/arrow.png">
             </button>
             <div class="dropdown-content">
                 <a href="#">Link 1</a>
@@ -105,43 +106,65 @@ session_start();
             </div><!--close dropdown-content-->
         </div><!--close dropdown-->
 
-        <a href="#exit">Exit <img class="exit-icon" src="exit_icon.png" alt="Exit icon"></a>
+        <a href="#exit">Exit <img class="exit-icon" src="images/exit_icon.png" alt="Exit icon"></a>
     </div><!--close navbar-->
 
 
 <!---------------------------------------------------------------------------------------------------------------->
 
-<?php include 'listbox.php'; ?>  <!--Includes listbox file -->
+<?php include 'DeleteListbox.php'; ?>  <!--Includes listbox file -->
 <script>
-function populate()  //Populates Text fields
-{
-    var sel = document.getElementById("listbox"); //Selects listbox
-    var result;
-    result = sel.options[sel.selectedIndex].value; //Result equals value at selected index
-    var personDetails = result.split('`'); //Splits result by , into different indexes in personDetails
-    document.getElementById("display").innerHTML = "The details of the person selected: " + result;
-    document.getElementById("amendid").value = personDetails[0];
-    document.getElementById("amendfirstname").value = personDetails[1]; //populates fields with values at personDetails index
-    document.getElementById("amendlastname").value = personDetails[2];
-    document.getElementById("amendDOB").value = personDetails[3];
-}
+    populate();
 </script>
 
 <p id ="display"> </p>
 
-<form name = "myForm" action="AmendView.php" onsubmit="return confirmCheck()" method ="post">  <!--Calls confirmCheck() & Sends values to AmendView.php if true -->
+<form name = "myForm" class="form" action="DeleteCompany.php" onsubmit= "return canBeDeleted()" method ="post">  <!--Calls confirmCheck() & Sends values to AmendView.php if true -->
 
-    <label for="amendid">Person ID</label>
-    <input type="text" name="amendid" id="amendid" disabled>
-    <label for="amendfirstname">First Name</label>
-    <input type="text" name="amendfirstname" id="amendfirstname" disabled>       <!--Defaults all input fields as disabled -->
-    <label for="amendlastname">Last Name</label>
-    <input type="text" name="amendlastname" id="amendlastname" disabled>
-    <label for= "amendDOB">Date Of Birth</label>
-    <input type="date" name="amendDOB" id="amendDOB" title="format is dd-mm-yyyy" disabled>
+    <label for="companyName">Company Name</label>
+    <input type="text" name="companyName" id="companyName" disabled>       <!--Defaults all input fields as disabled -->
+
+    <label for= "companyAddress">Address</label>
+    <input type="text" name="companyAddress" id="companyAddress" disabled>
+
+    <label for= "phone">Phone Number</label>
+    <input type="tel" name="phone" id="phone" disabled>
+
+    <label for= "companyWeb">Web Address</label>
+    <input type="text" name="companyWeb" id="companyWeb" disabled>
+
+    <label for="companyEmail">Email Address</label>
+    <input type="text" name="companyEmail" id="companyEmail" disabled>
+
+    <label for="credit">Credit Limit</label>
+    <input type="text" name="credit" id="credit" disabled>
+
+    <label for="amountOwed">Amount Owed</label>
+    <input type="text" name="amountOwed" id="amountOwed" disabled>
+
+    <label for="blacklistFlag">Blacklist Flag</label>
+    <input type="text" name="blacklistFlag" id="blacklistFlag" disabled>
+
+    <label for="noOfBlacklists">No. Of Previous Blacklists</label>
+    <input type="text" name="noOfBlacklists" id="noOfBlacklists" disabled>
+
     <br><br>
 
-    <input type="submit" value="Save Changes">
+    <input type="submit" value="Delete Record" id="Delete" name="Delete">
 </form>
+
+<?php
+                if(isset($_POST['Delete']) && ($_POST['amountOwed'] == 0) && ($_POST['blacklistFlag'] == 'N')) //check if form was submitted
+                { 
+                    $_SESSION['companyName'] = $_POST['companyName'];
+
+                    echo"<p class=popupmsg>" . $_POST['companyName'] . " has been set for deletion </p>";
+
+                }
+                else
+                {
+                    echo("Ensure the company is NOT blacklisted and doesn't owe any money");
+                }
+                ?>   
 </body>
 </html>

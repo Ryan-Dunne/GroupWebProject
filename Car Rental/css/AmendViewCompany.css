@@ -1,3 +1,9 @@
+/*  Name:       Ryan Dunne
+    Student No: C00263405
+    Date:       03/2024
+    Purpose:    Styling for Amend/View Screen
+*/
+
 /*style sheet used for rentals etc*/
 /*imported fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
@@ -336,7 +342,7 @@ footer {
   background-color: #f9d5d9;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 20px;
   width: 35%;
 
@@ -407,7 +413,7 @@ footer {
      margin-left:10%;
   }
   
-  #reset
+  #amendviewbutton
   {
    width: 35%;
    padding-top: 10px;
@@ -428,3 +434,20 @@ footer {
   margin-left: 43%;
 }
 
+#listbox
+{
+  padding: 5px;
+  margin-top: 35px;
+  position: fixed;
+}
+
+#listboxHeader
+{
+  position: fixed;
+}
+
+#display
+{
+  margin-top: 70px;
+  position: fixed;
+}

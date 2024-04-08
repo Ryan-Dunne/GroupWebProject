@@ -1,7 +1,7 @@
 <!--Name:       Ryan Dunne
     Student No: C00263405
-    Date:       01/03/2024
-    Purpose:    Create a listbox
+    Date:       03/2024
+    Purpose:    Create a listbox for Delete Screen
 -->
 
 <?php

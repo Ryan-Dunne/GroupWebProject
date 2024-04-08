@@ -20,8 +20,8 @@ if (!$result = mysqli_query($con, $sql))    //If Con & sql doesnt not return res
 
 
 
-echo "<select name = 'carlistbox' id = 'carlistbox' onclick = 'populateCarlistbox()'>"; //Start of Listbox
-
+echo "<table name = 'carTable' id = 'carTable'>"; //Start of Listbox
+echo "<th>ID</th><th>Reg</th>";
 while ($row = mysqli_fetch_array($result))  //While row can fetch another result
 {
     $id = $row['carID'];
@@ -32,10 +32,9 @@ while ($row = mysqli_fetch_array($result))  //While row can fetch another result
     $colour = $row['colour'];
     $bodyStyle = $row['bodyStyle'];
     $doors = $row['doors'];
-    $allText = "$id  $carReg  $modelName  $version  $fuelType  $colour  $bodyStyle  $doors"; //Contains all of the values from the row, seperated by ,
-    echo "<option value = '$allText'>$id $carReg</option>"; //Shows the first  & last name values in listbox}
+    echo "<tr><td>$id <td>$carReg</td></td></tr>"; //Shows the first  & last name values in listbox}
 }
-echo "</select>";
+echo "</table>";
 
 
 if(isset($_POST["chooseCar"]))

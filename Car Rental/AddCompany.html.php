@@ -158,7 +158,6 @@ session_start();  //Starts PHP Session to check for SESSION variables
 
                 }?>   
     </div>
-
 </body>
 
 </html>

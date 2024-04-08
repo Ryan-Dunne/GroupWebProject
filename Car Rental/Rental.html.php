@@ -119,14 +119,6 @@ session_start();
 
 <p id ="display"> </p>
 
-<br><br>
-    <form>
-    <input type="text" id ="carID">
-    <label for="carID">Selected Car</label>
-    <input type="text" id ="carReg">
-    <input type="submit" value="Choose Car" id="chooseCompany" name="chooseCompany" onclick="submitFields()">
-    <form>
-    <br><br>
 
 <form name = "myForm" class="form" action="Rental.html.php" method="POST">  <!--Calls confirmCheck() & Sends values to AmendView.php if true -->
 
@@ -160,7 +152,7 @@ $_SESSION['address'] = $_POST['address'];
 $_SESSION['credit'] = $_POST['credit'];
 $_SESSION['amountOwed'] = $_POST['amountOwed'];
 
-include 'RentalCarListboxc.php';
+include 'RentalCarListbox.php';
 }
 ?>
 </form>

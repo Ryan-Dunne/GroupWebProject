@@ -36,7 +36,7 @@ body {
   padding: 0;
   /*getting rid of defaultmargin and padding - ensures no white spaces either side of navbar etc*/
   margin: 0;
-  background: white;
+  background: linear-gradient(to top, #bfeeeb, #19aca4);
 }
 
 /*help button- bottom right corner*/

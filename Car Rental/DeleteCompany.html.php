@@ -1,9 +1,14 @@
-<!--HTML SHEET FOR ADDING A COMPANY-->
+<!--Name:       Ryan Dunne
+    Student No: C00263405
+    Date:       03/2024
+    Purpose:    Screen to set a Company for Deletion
+-->
+<!--HTML SHEET FOR DELETING A COMPANY-->
 <!DOCTYPE html>
 <html lang="en">
 <?php
-include 'db.inc.php';
-session_start(); 
+include 'db.inc.php'; //Establish DB connection
+session_start(); //Starts session
 ?>
 <head>
     <meta charset="utf-8"> <!--specifying character encoding for html docu-->
@@ -112,9 +117,9 @@ session_start();
 
 <!---------------------------------------------------------------------------------------------------------------->
 
-<?php include 'DeleteListbox.php'; ?>  <!--Includes listbox file -->
+<?php include 'DeleteCompanyListbox.php'; ?>  <!--Includes listbox file -->
 <script>
-    populate();
+    populate(); //Populates the forms fields
 </script>
 
 <p id ="display"> </p>
@@ -160,10 +165,6 @@ session_start();
 
                     echo"<p class=popupmsg>" . $_POST['companyName'] . " has been set for deletion </p>";
 
-                }
-                else
-                {
-                    echo("Ensure the company is NOT blacklisted and doesn't owe any money");
                 }
                 ?>   
 </body>

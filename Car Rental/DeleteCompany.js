@@ -1,38 +1,43 @@
+/*  Name:       Ryan Dunne
+    Student No: C00263405
+    Date:       03/2024
+    Purpose:    Javascript for Delete Company Screen
+*/
 function helpMenu()
 {
-    alert ("A Company's Web Address is not required\n New Companies should start at 1000 credit limit")
+    alert ("Ensure Company does NOT owed money\n\n Ensure Company is NOT currently Blacklisted\n\n Upon Submission, Companies are set for deletion & not permanently deleted")
 }
 
 function confirmSubmit()    //function called when form is about to be submit
 {
 
-        if(confirm("Are you sure you want to submit this form?") == false)
+        if(confirm("Are you sure you want to submit this form?") == false) //Asks for confirmation
         {
-            return false;
+            return false; //User cancels submission
         }
-        else
+        else //User confirms submission
         {
-            submitFields();
-            return true;
+            submitFields(); //Enables fields so they can be sent using POST
+            return true; //Submits
             
         }
    
 }
 
 
-function canBeDeleted()
+function canBeDeleted() //function to check if deletion conditions are met (Blacklist Flag = N & AmountOwed = 0)
 {
-    $amountOwed = document.getElementById("amountOwed").value;
-    $BLFlag = document.getElementById("blacklistFlag").value;
+    $amountOwed = document.getElementById("amountOwed").value; //Conditions are checked using the values from the form
+    $BLFlag = document.getElementById("blacklistFlag").value; 
 
-    if($amountOwed == 0 && $BLFlag == "N")
+    if($amountOwed == 0 && $BLFlag == "N") //If Deletion conditions are met...
     {
-        confirmSubmit();
+        confirmSubmit(); //Asks User to confirm deletion
     }
 
     else
     {
-        alert("Ensure the company is NOT blacklisted and doesn't owe any money");
+        alert("Ensure the company is NOT blacklisted and doesn't owe any money"); //Displays Error
         return false;
     }
 
@@ -47,7 +52,7 @@ function populate()  //Populates Text fields
     var sel = document.getElementById("listbox"); //Selects listbox
     var result;
     result = sel.options[sel.selectedIndex].value; //Result equals value at selected index
-    var companyDetails = result.split('  '); //Splits result by , into different indexes in companyDetails
+    var companyDetails = result.split('  '); //Splits result by double spaces into different indexes in companyDetails
     document.getElementById("display").innerHTML = "Selected Company: " + companyDetails[1];
     document.getElementById("companyName").value = companyDetails[1]; //populates fields with values at companyDetails index
     document.getElementById("companyAddress").value = companyDetails[2];

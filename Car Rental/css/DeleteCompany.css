@@ -270,67 +270,6 @@ body {
   /* vertical centering */
 }
 
-
-
-
-/* Styles for the boxes container */
-.boxes-container {
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 40px;
-}
-
-/* Styles for the individual boxes */
-.box {
-  height: 400px;
-  width: 500px;
-  margin: 20px;
-  border: 6px solid #afafaf;
-  border-radius: 5px;
-  color: #2B7A78;
-  font-family: 'Cabin', sans-serif;
-  text-align: center;
-  padding: 20px;
-  /*line-height: 200px;*/
-  font-size: 25px;
-  box-shadow: 2px 2px 2px 2px rgba(165, 163, 163, 0.767);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-#box1 {
-  background: url('lightPink.jpg') no-repeat center;
-  background-size: cover;
-
-}
-
-#box2 {
-  background: url('awua.jpg') no-repeat center;
-  background-size: cover;
-}
-
-.box h2 {
-  font-size: 2em;
-  text-align: center;
-}
-
-
-/*help page*/
-.section h1 {
-  color: #2B7A78;
-}
-
-
-
-.section,
-footer {
-  text-align: center;
-  font-family: 'Cabin', sans-serif;
-  font-size: 15px;
-}
-
 .form
 {
   background-color: #f9d5d9;
@@ -415,12 +354,18 @@ footer {
 
 #listbox
 {
-  margin-left: 43%;  /*Centers Listbox*/
+  margin-left: 45%;  /*Centers Listbox*/
 }
 
 #display
 {
   margin-left: 43%; /*Centers Currently Selected messsage*/
+}
+
+.centerButton
+{
+  display: flex; /*Centers delete button*/
+  justify-content: center;
 }
 
 .popupmsg

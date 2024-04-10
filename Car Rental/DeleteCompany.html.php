@@ -15,7 +15,7 @@ session_start(); //Starts session
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--defining the viewport to control the page's dimensions and scaling for different devices:-->
     <!-- LINKING CSS Styles sheet-->
-    <link rel="stylesheet" href="DeleteCompany.css">
+    <link rel="stylesheet" href="css/DeleteCompany.css">
     <script src="DeleteCompany.js"></script>
     <title>Delete A Company </title>
 </head>
@@ -124,7 +124,9 @@ session_start(); //Starts session
 
 <p id ="display"> </p>
 
-<form name = "myForm" class="form" action="DeleteCompany.php" onsubmit= "return canBeDeleted()" method ="post">  <!--Calls confirmCheck() & Sends values to AmendView.php if true -->
+<form name = "myForm" class="form" action="DeleteCompany.php" onsubmit= "return canBeDeleted()" method ="post">  <!--Calls canBeDeleted() & Sends values to DeleteCompany.php if true -->
+
+    <input type="hidden" name="companyID" id="companyID"> <!--Hidden field holds primary key for each record-->
 
     <label for="companyName">Company Name</label>
     <input type="text" name="companyName" id="companyName" disabled>       <!--Defaults all input fields as disabled -->
@@ -155,16 +157,15 @@ session_start(); //Starts session
 
     <br><br>
 
+    <div class="centerButton">
     <input type="submit" value="Delete Record" id="Delete" name="Delete">
+</div>
 </form>
 
 <?php
-                if(isset($_POST['Delete']) && ($_POST['amountOwed'] == 0) && ($_POST['blacklistFlag'] == 'N')) //check if form was submitted
+                if(isset($_POST['Delete']) && ($_POST['amountOwed'] == 0) && ($_POST['blacklistFlag'] == 'N')) //checks if delete was clicked & Company can be deleted
                 { 
-                    $_SESSION['companyName'] = $_POST['companyName'];
-
-                    echo"<p class=popupmsg>" . $_POST['companyName'] . " has been set for deletion </p>";
-
+                    echo"<p class=popupmsg>" . $_POST['companyName'] . " has been set for deletion </p>"; //Alerts USer company has been set for deletion
                 }
                 ?>   
 </body>

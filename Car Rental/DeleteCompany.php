@@ -7,6 +7,7 @@
 include 'db.inc.php'; //DB Connection
 include 'DeleteCompany.html.php'; //Stays on same page when submitted
 
+$_SESSION['companyID'] = $_POST['companyID'];
 $_SESSION['companyName'] = $_POST['companyName'];
 $_SESSION['companyAddress'] = $_POST['companyAddress'];
 $_SESSION['phone'] = $_POST['phone'];
@@ -17,7 +18,7 @@ $_SESSION['amountOwed'] = $_POST['amountOwed'];
 $_SESSION['blacklistFlag'] = $_POST['blacklistFlag'];
 $_SESSION['noOfBlacklists'] = $_POST['noOfBlacklists'];
 
-$sql = "UPDATE company SET DeleteFlag = 1 WHERE CompanyName = '$_SESSION[companyName]'" ; //Statement to set Delete Flag
+$sql = "UPDATE company SET DeleteFlag = 1 WHERE companyID = '$_SESSION[companyID]'" ; //Statement to set Delete Flag using primary key
 
 
 if (!mysqli_query($con,$sql)) //If DB update cant be done...

@@ -16,18 +16,9 @@ if(!mysqli_query($con,$sql))    //If Query returns false..
 {
     echo "ERROR".mysqli_error($con); //Echo Error
 }
-/*else
+else
 {
-    if(mysqli_affected_rows($con) != 0) //If a row was affected...
-    {
-        echo mysqli_affected_rows($con)." record(s) updated <br>";  //Echo rows updated
-        echo "Person ID " . $_POST['id'] . ", " . $_POST['name'] . ", " . $_POST['address']. ", " . $_POST['phone']. ", " . $_POST['gpa']. ", " . 
-                            $_POST['dob']. ", " . $_POST['yearbegan']. ", " . $_POST['coursecode'] . " Has Been Updated!";
-    }
-    else
-    {
-        echo "No Records were changed";
-    }
-}*/
+        echo "<p class='popupmsg'>A record has been updated for " . $_POST['companyName'] . "</p>";  //Echo Record updated
+}
 mysqli_close($con);
 ?>

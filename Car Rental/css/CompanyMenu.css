@@ -18,9 +18,10 @@
 /*STYLING THE BODY*/
 body {
   font-family: 'Cabin', sans-serif;
-  padding: 0; /*getting rid of default margin and padding - ensures no white spaces either side of navbar etc*/
+  padding-bottom: 12%;
   margin: 0;
-  background: white;
+  background: linear-gradient(to top, #bfeeeb, #19aca4);
+
 }
 
 /*---------------------------navbar-----------------------------------------*/
@@ -139,11 +140,6 @@ body {
   height: 80px;
 }
 
-/*---------------------------Column Styling(gradient background)------------------*/
-.column {
-  background: linear-gradient(to top, #19aca4, #bfeeeb);
-  padding: 20px;
-}
 
 /*---------------------------Help Button-----------------------------------*/
 .help-button {
@@ -154,131 +150,9 @@ body {
   height: 60px;
 }
 
-/*--------------------------Form styling----------------------------------*/
-/*Actual Form container*/
-
-.returnCar, .addCar, .deleteCar, .amendCar {
-  background-color: #fff;
-  padding: 15px 30px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
-  margin: 0 auto;
-  font-family: 'Cabin', sans-serif;
-}
-
-/*FORM HEADINGS*/
-.returnCar h2, .addCar h2, .deleteCar h2, .amendCar h2 {
-  color: #2b7a78;
-  font-family: 'Cabin', sans-serif;
-  font-size: 24px;
-  text-align: center;
-}
-
-.returnCar .form-group, .addCar .form-group, .deleteCar .form-group {
-  margin-bottom: 15px;
-}
-
-/*FORM LABELS*/
-.returnCar label, .addCar label, .deleteCar label, .amendCar label {
-  display: block;
-  font-weight: normal;
-  font-size: 18px;
-}
-.amendCar label {
-  margin-top: 10px; /* Add some margin top to create space between label and input */
-}
-/*FORM INPUTS*/
-.returnCar input[type="text"], .addCar input[type="text"], .addCar input[type="date"], .deleteCar input[type="text"], .deleteCar input[type="date"], .amendCar input[type="text"], .amendCar input[type="date"]{
-  width: calc(100% - 16px);
-  padding: 8px;
-  box-sizing: border-box;
-  border: 1px solid #2b7a78;
-  border-radius: 4px;
-  font-size: 16px;
-  font-family: 'Cabin', sans-serif;
-}
-
-select {
-  width: calc(100% - 16px); /* Make the select element fill its parent container */
-  padding: 8px; 
-  border: 1px solid #2b7a78; 
-  border-radius: 4px; 
-  font-size: 16px; 
-  font-family: 'Cabin', sans-serif;
-  
-}
 
 
-/*-------------------------Buttons----------------------------*/
-.returnCar .button-group , .addCar .button-group, .deleteCar .button-group, .amendCar .button-group{
-  margin-top: 20px;
-  text-align: center;
-}
-
-.returnCar button, .addCar button, .deleteCar button, .amendCar button,
-.amendCar input[type="button"],
-.amendCar input[type="submit"] {
-  padding: 8px 16px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.returnCar button[type="submit"], .addCar button[type="submit"], .deleteCar button[type="submit"], .amendCar button[type="submit"]{
-  margin-right: 8px;
-  background-color: #2b7a78;
-  color: #def2f1;
-}
-
-.returnCar button[type="reset"], .addCar button[type="reset"], .deleteCar button[type="reset"], .amendCar button[type="reset"]{
-  background-color: #dc3545;
-  color: #def2f1;
-  padding: 8px 16px;
-}
-
-/* Button hover effect */
-.returnCar button[type="submit"]:hover, .addCar button[type="submit"]:hover, .deleteCar button[type="submit"]:hover, .amendCar button[type="submit"]:hover, .amendCar input[type="button"]:hover, .amendCar input[type="submit"]:hover {
-  background-color: #def2f1;
-  color: #2b7a78;
-}
-
-/* Button hover effect */
-.returnCar button[type="reset"]:hover, .addCar button[type="reset"]:hover, .deleteCar button[type="reset"]:hover, .amendCar button[type="reset"]:hover{
-  background-color: #def2f1;
-  color: #dc3545;
-}
-
-/* Style for Amend Details button */
-#amendViewButton {
-  margin-right: 8px;
-  background-color: #2b7a78;
-  color: #def2f1;
-  
-}
-
-/* Hover effect for Amend Details button */
-#amendViewButton:hover {
-  background-color: #def2f1;
-  color: #2b7a78;
-}
-
-/* Style for Save Changes button */
-#saveChanges {
-  background-color: #dc3545;
-  color: #def2f1;
-  padding: 8px 16px;
-}
-
-/* Hover effect for Save Changes button */
-#saveChanges:hover {
-  background-color: #def2f1;
-  color: #dc3545;
-}
-
-/*--------------------For Car Menu Boxes------------------------*/
-/* (CarMenu.html etc) */
+/*--------------------For Company Menu Boxes------------------------*/
 .boxes-container {
   	display: flex;
   	justify-content: space-evenly;
@@ -311,27 +185,38 @@ select {
 
 /*When you click on word in the box it will bring you to that page*/
 /*style the words in the boxes*/
-#box1 a, #box2 a, #box3 a {
+#box1 a, #box2 a, #box3 a, #box4 a 
+{
         text-decoration: none; /* Remove underline */
         font-family: 'Cabin', sans-serif;
         color: #2B7A78; 
-    }
-/*Add box*/
+}
+/*Add Company box*/
 #box1 {
   
 	background-color:#F8C8DC;/*lightpink*/
   	background-size: cover;
 
 }
-/*amend box*/
-#box2  {
-	background-color: #cbfff5;/*turquoise/ aqua/teal*/
+/*Amend/View Company box*/
+#box2  
+{
+	background-color: #ffb1d2;/*turquoise/ aqua/teal*/
   	background-size: cover;
 }
 
-/*delete box*/
-#box3 {
+/*Delete Company box*/
+#box3 
+{
 	
   	background-size: cover;
-  	background-color: lightblue;
+  	background-color: #cbfff5;
+}
+
+/*Rentals box*/
+#box4 
+{
+	
+  background-size: cover;
+  background-color: lightblue;
 }

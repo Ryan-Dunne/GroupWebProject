@@ -138,14 +138,15 @@
     <br><br><br><br>
     
 
-    <input type="submit" class="button" id="submit" value="Save Changes"> <input type = "button" id="amendviewbutton" value="Amend Details" onclick="toggleLock()">
+    <!--Form buttons, toggleLock() enables and disables Submit button-->
+    <input type="submit" class="button" id="submit" value="Save Changes" disabled> <input type = "button" id="amendviewbutton" value="Amend Details" onclick="toggleLock()">
 </form>
 <div>
 
 <?php
 if(isset($_POST['submit'])) //check if form was submitted
 { 
-    echo"<p class=popupmsg>A record has been added for: " . $_SESSION['companyName'] . "</p>";
+    echo"<p class=popupmsg>A record for:" . $_SESSION['companyName'] . " has been modified:  </p>"; //Popup upon completion
 }?>   
 </div>
 

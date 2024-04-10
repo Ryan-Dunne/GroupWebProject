@@ -68,8 +68,6 @@ function confirmCheck() //Ask User to confirm their changes
     }
     else
     {
-        populate();
-        toggleLock();   //Does not send
         return false;
     }
 }

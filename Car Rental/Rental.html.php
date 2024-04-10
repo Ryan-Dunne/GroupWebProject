@@ -117,9 +117,6 @@ session_start();
     populate();
 </script>
 
-<p id ="display"> </p>
-
-
 <form name = "myForm" class="form" action="Rental.html.php" method="POST">  <!--Calls confirmCheck() & Sends values to AmendView.php if true -->
 
     <input type="hidden" id="companyID" name="companyID">
@@ -144,16 +141,7 @@ session_start();
     <br><br>
 
 <?php
-if(isset($_POST["chooseCompany"]))
-{
-$_SESSION['companyID'] = $_POST['companyID'];
-$_SESSION['companyName'] = $_POST['companyName'];
-$_SESSION['address'] = $_POST['address'];
-$_SESSION['credit'] = $_POST['credit'];
-$_SESSION['amountOwed'] = $_POST['amountOwed'];
-
-include 'RentalCarListbox.php';
-}
+    include 'RentalCarListbox.html.php';
 ?>
 </form>
 

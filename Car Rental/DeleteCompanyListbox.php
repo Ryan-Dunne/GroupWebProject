@@ -32,7 +32,7 @@ while ($row = mysqli_fetch_array($result))  //While row can fetch another result
     $blacklistFlag = $row['BlacklistFlag'];
     $previousBlacklists = $row['NoOfPreviousBlacklists'];
     $allText = "$id  $companyName  $companyAddress  $phone  $webAddress  $emailAddress  $creditLimit  $amountOwed  $blacklistFlag  $previousBlacklists"; //Contains all of the values from the row, seperated by ,
-    echo "<option value = '$allText'>$id $companyName</option>"; //Shows the first  & last name values in listbox
+    echo "<option value = '$allText'>$companyName</option>"; //Shows the first  & last name values in listbox
 }
 
 echo "</select>";

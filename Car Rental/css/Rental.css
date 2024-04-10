@@ -429,9 +429,11 @@ footer {
 }
 
 
-table
+#scrollCarTable
 {
-  background-color: greenyellow;
+  background-color: blue;
+  height: 200px;
+  overflow-y: scroll;
 }
 
 
@@ -441,11 +443,20 @@ td, th, tr
   background-color: white;
   text-align: center;
 
-#regCell:hover
+td:hover
 {
   background-color: grey;
 }
 }
 
+.hide
+{
+  display: none;
+}
 
+#display
+{
+  margin-top: 70px;
+  position: fixed;
+}
 

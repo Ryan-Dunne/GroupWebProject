@@ -32,7 +32,16 @@ function canBeDeleted() //function to check if deletion conditions are met (Blac
 
     if($amountOwed == 0 && $BLFlag == "N") //If Deletion conditions are met...
     {
-        confirmSubmit(); //Asks User to confirm deletion
+        if(confirm("Are you sure you want to submit this form?") == false) //Asks for confirmation
+        {
+            return false; //User cancels submission
+        }
+        else //User confirms submission
+        {
+            submitFields(); //Enables fields so they can be sent using POST
+            return true; //Submits
+            
+        }   
     }
 
     else
@@ -54,6 +63,7 @@ function populate()  //Populates Text fields
     result = sel.options[sel.selectedIndex].value; //Result equals value at selected index
     var companyDetails = result.split('  '); //Splits result by double spaces into different indexes in companyDetails
     document.getElementById("display").innerHTML = "Selected Company: " + companyDetails[1];
+    document.getElementById("companyID").value = companyDetails[0];
     document.getElementById("companyName").value = companyDetails[1]; //populates fields with values at companyDetails index
     document.getElementById("companyAddress").value = companyDetails[2];
     document.getElementById("phone").value = companyDetails[3];
@@ -65,13 +75,13 @@ function populate()  //Populates Text fields
     document.getElementById("noOfBlacklists").value = companyDetails[9];
 }
 
-function submitFields()  //Submits Text fields
+function submitFields()  //Submits Text fields by ensuring they're all enabled upon form submission
 {
-
+    document.getElementById("companyID").disabled = false;
     document.getElementById("companyName").disabled = false;
     document.getElementById("companyAddress").disabled = false;
     document.getElementById("phone").disabled = false;
-    document.getElementById("companyWeb").disabled = false;
+    document.getElementById("companyWeb").disabled = false;    
     document.getElementById("companyEmail").disabled = false;
     document.getElementById("credit").disabled = false;
     document.getElementById("amountOwed").disabled = false;

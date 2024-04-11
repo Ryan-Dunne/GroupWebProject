@@ -12,6 +12,7 @@ function confirmSubmit()    //function called when form is about to be submit
         }
         else
         {
+            submitFields();
             return true;
             
         }
@@ -46,7 +47,8 @@ function populateCarlistbox()  //Populates Text fields
     var carDetails = result.split('  '); //Splits result by , into different indexes in companyDetails
     document.getElementById("display").innerHTML = "Selected Car: " + carDetails[1];
     document.getElementById("carID").value = carDetails[0];
-    document.getElementById("carReg").value = carDetails[1] + " " + carDetails[2]; //populates fields with values at companyDetails index
+    document.getElementById("carReg").value = carDetails[1]; //populates fields with values at companyDetails index
+    document.getElementById("modelName").value = carDetails[2]
     document.getElementById("currentDate").value = currentDate;
 }
 
@@ -59,6 +61,8 @@ function submitFields()  //Submits Text fields
     document.getElementById("address").disabled = false;
     document.getElementById("credit").disabled = false;
     document.getElementById("amountOwed").disabled = false;
+    document.getElementById("carReg").disabled = false;
+    document.getElementById("currentDate").disabled = false;
     }
     else 
     {
@@ -74,11 +78,13 @@ function getSetTableData(x) //Takes current instance of activated function as a 
 
     var carID = document.getElementById("carTable").rows[x.rowIndex].cells[0].innerHTML;
     var carReg = document.getElementById("carTable").rows[x.rowIndex].cells[1].innerHTML;
+    var carName = document.getElementById("carTable").rows[x.rowIndex].cells[2].innerHTML;
     var costPerDay = document.getElementById("carTable").rows[x.rowIndex].cells[9].innerHTML;
     var fiveDayDiscount = document.getElementById("carTable").rows[x.rowIndex].cells[10].innerHTML;
     var tenDayDiscount = document.getElementById("carTable").rows[x.rowIndex].cells[11].innerHTML;
     document.getElementById("carID").value = carID;
     document.getElementById("carReg").value = carReg;
+    document.getElementById("carName").value = carName;
     document.getElementById("costPerDay").value = costPerDay;
     document.getElementById("fiveDayDiscount").value = fiveDayDiscount;
     document.getElementById("tenDayDiscount").value = tenDayDiscount;

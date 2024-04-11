@@ -44,14 +44,15 @@ echo "</table></div>";
 ?>
 
     <br><br>
-    <form>
+
     <input type="hidden" id ="carID" name="carID">  <!--Hidden Form Data for POST method-->
+    <input type="hidden" id ="carName" name="carName">
     <input type="hidden" id ="costPerDay" name="costPerDay"> <!--Hidden Form Data for Javascript methods-->
     <input type="hidden" id ="fiveDayDiscount" name="fiveDayDiscount">
     <input type="hidden" id ="tenDayDiscount" name="tenDayDiscount">
 
     <label for="carReg">Selected Car</label>
-    <input type="text" id ="carReg" disabled>
+    <input type="text" id ="carReg" name="carReg" disabled>
 
     <label for="currentDate">Current Date</label>
     <input type="date" id ="currentDate" name="currentDate" disabled>
@@ -63,9 +64,23 @@ echo "</table></div>";
     <label for="totalCost">Total Cost to Rent</label>
     <input type="text" id ="totalCost" disabled>
     <br><br>
-    <input type="submit" value="Choose Car" id="chooseCar" name="chooseCar" onclick="submitFields()">
+    <input type="submit" value="Choose Car" id="chooseCar" name="chooseCar">
     <form>
     <br><br>
+
+    <?php
+    if(isset($_POST["chooseCar"]))
+    {
+        $_SESSION['carID'] = $_POST['carID'];
+        $_SESSION['carReg'] = $_POST['carReg'];
+        $_SESSION['carName'] = $_POST['carName'];
+        $_SESSION['currentDate'] = $_POST['currentDate'];
+        $_SESSION['returnDate'] = $_POST['returnDate'];
+    }
+
+
+
+    ?>
 
 
 

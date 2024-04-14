@@ -1,0 +1,453 @@
+/*  Name:       Ryan Dunne
+    Student No: C00263405
+    Date:       03/2024
+    Purpose:    Styling for Amend/View Screen
+*/
+
+/*style sheet used for rentals etc*/
+/*imported fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+/*imported font from google fonts*/
+
+/*w3schools*/
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+
+  .column {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+
+  }
+}
+
+
+* {
+  box-sizing: border-box;
+  /*border-box tells the browser to account for any border and padding in the values you specify for an element's width and height*/
+}
+
+
+/*STYLING THE BODY*/
+body {
+  font-family: 'Cabin', sans-serif;
+  padding: 0;
+  /*getting rid of defaultmargin and padding - ensures no white spaces either side of navbar etc*/
+  margin: 0;
+  background: white;
+}
+
+/*help button- bottom right corner*/
+.help-button {
+  position: fixed;
+  /*fixed position so it stays in the same place when scrolling*/
+  bottom: 10px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+
+}
+
+.logo {
+  position: absolute;
+  top: 25px;
+  left: 20px;
+  width: 110px;
+  height: 110px;
+
+}
+
+/*arrow on navbar*/
+.arrow {
+  height: 16px;
+  width: 16px;
+  position: relative;
+  top: 5px;
+  z-index: 2;
+}
+
+
+/*exit icon*/
+.exit-icon {
+  height: 16px;
+  width: 16px;
+  position: relative;
+  top: 5px;
+}
+
+/*welcome message */
+.header,
+.header h1 {
+  font-family: 'Cabin', sans-serif;/*imported - easy to read font*/
+  background: white;
+  color: #2B7A78;/*text colour*/
+  font-size: 2.5em;/*font size*/
+  text-align: center;/*centered text*/
+  padding-top: 5px;/*small bit of space from top*/
+  margin-top: 0px;
+
+}
+
+
+/*styling Top navbar*/
+.navbar {
+  overflow: hidden;
+  background-color: #dfdfdf;/*#2B7A78;*/
+  padding: 20px 0;/*making navbar thicker*/
+  display: flex;
+  justify-content: space-around;
+  margin-top: -70px; /*moves navbar up by pixels*/
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  font-size: 16px;
+  font-family: 'Cabin', sans-serif;
+  color: #2B7A78;
+  /*#DEF2F1 ;*/
+  text-align: center;
+  padding: 20px 20px;
+  text-decoration: none;
+
+}
+
+.dropdown {
+  float: left;/*dropdpwn menu aligned next to each other*/
+  overflow: hidden;/* so dropdown content won't take up space when its not visible*/
+}
+
+
+/*styling dropdown buttons*/
+.dropdown .dropbtn {
+
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: #2B7A78;
+  padding: 20px 20px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+/* rotate arrow when hovered */
+.dropbtn:hover .arrow {
+  transform: rotate(90deg);
+}
+
+/*style the navbar link and dropdown buttons on hover*/
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+  background-color: #afafaf;
+  color: #2B7A78;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #dfdfdf;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);/*adds shadow effect*/
+  z-index: 1;/*sets the stack order of dropddown content*/
+}
+
+.dropdown-content a {
+  float: none;
+  color: #2B7A78;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #afafaf;
+}
+
+/* makes dropdown-content visible when user hovers over the .dropdown  bys etting display to block*/
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+/*create column with grey background to give more depth?--main menu page*/
+.column {
+  /* float: left; /*left aligns the column*/
+  width: 100%;
+  background-color: #f1f1f1;
+  /*grey/white colour*/
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+
+.menu {
+  background: linear-gradient(to top, #bfeeeb, #19aca4);
+  /*gradient background*/
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  /*shadow effect*/
+  text-align: center;
+
+  width:60%;
+  margin: 0 auto;
+
+}
+
+.parent-elemnt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+
+}
+
+
+.menu ul {
+  list-style-type: none;
+  /*remove bullets*/
+  padding: 0;
+}
+
+.menu li {
+  margin: 20px;
+  /*spacing between links*/
+}
+
+.menu h2 {
+  font-family: 'Cabin', sans-serif;
+  color: #DEF2F1;
+  font-size: 3em;
+  font-weight: bolder;
+  padding: 20px;
+  margin-top: 10px;/*reduces top margin of h2 element to 10 pixels*/
+  margin-bottom: 30px;
+
+}
+
+
+/*links*/
+.menu a {
+  text-decoration: none;
+  padding: 5px 10px;
+  background-color: #DEF2F1;
+  ;
+  color: #2B7A78;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  /*tranasition effect*/
+  font-size: 2em;
+  display: inline-block;
+  width: 400px;
+  /*width of links are uniform*/
+  height: 60px;
+  text-align: center;
+  font-family: 'Cabin', sans-serif;
+  line-height: 50px;
+  /* vertical centering */
+}
+
+
+.menu a:hover {
+  background-color: #2B7A78;
+  color: #DEF2F1;
+  font-size: 2em;
+  width: 400px;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  text-align: center;
+  font-family: 'Cabin', sans-serif;
+  line-height: 50px;
+  /* vertical centering */
+}
+
+
+
+
+/* Styles for the boxes container */
+.boxes-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 40px;
+}
+
+/* Styles for the individual boxes */
+.box {
+  height: 400px;
+  width: 500px;
+  margin: 20px;
+  border: 6px solid #afafaf;
+  border-radius: 5px;
+  color: #2B7A78;
+  font-family: 'Cabin', sans-serif;
+  text-align: center;
+  padding: 20px;
+  /*line-height: 200px;*/
+  font-size: 25px;
+  box-shadow: 2px 2px 2px 2px rgba(165, 163, 163, 0.767);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#box1 {
+  background: url('lightPink.jpg') no-repeat center;
+  background-size: cover;
+
+}
+
+#box2 {
+  background: url('awua.jpg') no-repeat center;
+  background-size: cover;
+}
+
+.box h2 {
+  font-size: 2em;
+  text-align: center;
+}
+
+
+/*help page*/
+.section h1 {
+  color: #2B7A78;
+}
+
+
+
+.section,
+footer {
+  text-align: center;
+  font-family: 'Cabin', sans-serif;
+  font-size: 15px;
+}
+
+.form
+{
+  background-color: #f9d5d9;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  width: 35%;
+
+  height: auto;
+  border: 3px solid black;
+  padding: 10px;
+  align-items: center;  
+
+  label
+  {
+    color: #2B7A78;
+    align-content: center;
+    font-weight: bold;
+    margin-top: 70px;
+    margin-left: 20%;
+  }
+
+  input[type=text] 
+  {
+    width: 60%;
+    
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin: 18px 0 10px 20%;
+
+    text-align: center;
+  }
+
+  input[type=tel] 
+  {
+    width: 60%;
+    
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin: 18px 0 10px 20%;
+
+    text-align: center;
+  }
+
+  input[type=email] 
+  {
+    width: 60%;
+    
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin: 18px 0 10px 20%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  input[type=number] 
+  {
+    width: 60%;
+    
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin: 18px 0 10px 20%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  input[type="submit"]
+  {
+     width: 35%;
+     padding-top: 10px;
+     padding-bottom: 10px;
+     margin-left:10%;
+  }
+  
+  #amendviewbutton
+  {
+   width: 35%;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   margin-left:10%;
+  }
+}
+
+.background
+{
+  background: linear-gradient(to top, #bfeeeb, #19aca4);
+}
+
+.popupmsg
+{
+  color: red;
+  font-size: larger;
+  margin-left: 43%;
+}
+
+#listbox
+{
+  padding: 5px;
+  margin-top: 35px;
+  position: fixed;
+}
+
+#listboxHeader
+{
+  position: fixed;
+}
+
+#display
+{
+  margin-top: 70px;
+  position: fixed;
+}

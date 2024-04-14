@@ -1,0 +1,145 @@
+/*style sheet used for Rentals*/
+
+
+.form
+{
+  background-color: #f9d5d9;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 40%;
+
+  height: auto;
+  border: 3px solid black;
+  padding: 10px;
+  align-items: center;  
+
+  label
+  {
+    color: #2B7A78;
+    align-content: center;
+    font-weight: bold;
+    margin-top: 70px;
+    margin-left: 20%;
+  }
+
+  input[type=text] 
+  {
+    width: 60%;
+    
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin: 18px 0 10px 20%;
+
+    text-align: center;
+  }
+
+  input[type=tel] 
+  {
+    width: 60%;
+    
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin: 18px 0 10px 20%;
+
+    text-align: center;
+  }
+
+  input[type=email] 
+  {
+    width: 60%;
+    
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin: 18px 0 10px 20%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  input[type=number] 
+  {
+    width: 60%;
+    
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin: 18px 0 10px 20%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  input[type="submit"]
+  {
+     width: 35%;
+     padding-top: 10px;
+     padding-bottom: 10px;
+     margin-left:10%;
+  }
+  
+  #reset
+  {
+   width: 35%;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   margin-left:10%;
+  }
+}
+
+.background
+{
+  background: linear-gradient(to top, #bfeeeb, #19aca4);
+}
+
+.popupmsg
+{
+  color: red;
+  font-size: larger;
+  margin-left: 43%;
+}
+
+
+#scrollCarTable
+{
+  background-color: blue;
+  height: 200px;
+  overflow-y: scroll;
+}
+
+
+td, th, tr
+{
+  border: 1px solid black;
+  background-color: white;
+  text-align: center;
+
+td:hover
+{
+  background-color: grey;
+}
+}
+
+.hide
+{
+  display: none;
+}
+
+#display
+{
+  margin-top: 70px;
+  position: fixed;
+}
+
+#listbox
+{
+  position: fixed;
+  margin-top: 10px;
+  margin-left: 20%;
+}
+
+.centerButton
+{
+  display: flex; /*Centers Book Rental button*/
+  justify-content: center;
+}
+

@@ -1,0 +1,78 @@
+/*
+    Ryan Dunne
+    C00263405
+    14/02/2024
+*/
+.flexContainer  /* Contains the form & all its elements */
+{
+
+display: flex;
+flex-direction: column;
+justify-content: center;    /* Centers form using flex & centers the content within */
+align-self: center;
+background-color:#AC3553;
+width: 50%;
+margin-left: 25%;
+font-family: Arial, Helvetica, sans-serif;
+
+
+
+h3
+{
+    text-align: center;
+    font-size: 35px;
+    color: white;
+    background-color: #892A43;  /* Form Banner */
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 2%;
+    font-family: 'Courier New', Courier, monospace
+}
+
+label
+{
+  font-size: 18px;
+  align-self: center;   /* Centers labels and spaces them out more */
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+#name, #address, #phone, #dob, #course
+{
+  width: 180px;
+  height: 25px;
+  align-self: center;   /* All of the input fields  */
+  text-align: center;
+  margin-bottom: 2%;
+  margin-top: 0.5;
+}
+
+#submit
+{
+  margin-top: 3%;
+  width: 130px;
+  height: 40px;         /* Styles Submit Button */
+  align-self: center;
+  color: white;
+  background-color: green;
+}
+
+#reset
+{
+  margin-top: 3%;
+  width: 130px;
+  height: 40px;
+  align-self: center;   /* Styles Reset Button */
+  margin-bottom: 22%;
+  color: white;
+  background-color: red;
+}
+
+
+}
+
+
+#background
+{
+  background-color:#892A43  /* Covers entire html page background */
+}

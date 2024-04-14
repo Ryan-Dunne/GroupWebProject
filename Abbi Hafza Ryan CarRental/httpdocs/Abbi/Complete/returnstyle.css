@@ -1,0 +1,72 @@
+/* returns_style.css */
+
+/* Import the Cabin font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+
+/* Styles for the returns form */
+.returnCar {
+  background-color: #fff; /* White background */
+  padding: 15px 30px; /* Increased padding on the left and right side */
+  border-radius: 8px; /* rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* subtle shadow */
+  max-width: 400px; /* Set maximum width to limit the size of the form */
+  margin: 0 auto; /* Center the form horizontally */
+  font-family: 'Cabin', sans-serif; /* Set font family to Cabin */
+}
+
+.returnCar h2 {
+  color: #2B7A78;
+  font-family: 'Cabin', sans-serif;
+  font-size: 24px;
+  text-align: center;
+}
+
+.returnCar .form-group {
+  margin-bottom: 15px;
+}
+
+.returnCar label {
+  display: block;
+  font-weight: normal; /* Set font weight to normal */
+  font-size: 18px; /* Set font size for labels */
+}
+
+
+.returnCar input[type="text"] {
+  width: calc(100% - 16px); /* Adjust width to account for padding and border */
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #2B7A78;
+  border-radius: 4px;
+  font-size: 16px; /* Set font size for input boxes */
+}
+
+
+
+.returnCar .button-group {
+  margin-top: 20px;
+}
+
+.returnCar button {
+  padding: 8px 16px;
+  background-color: #2B7A78;/*darker green colour*/
+  color: #DEF2F1;/*lighter teal green colour*/
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size:16px;
+}
+
+.returnCar button[type="submit"] {
+  margin-right: 8px;
+}
+
+.returnCar button[type="reset"] {
+  background-color: #dc3545;/*red colour*/
+  padding: 8px 16px; 
+}
+
+.column {
+  background-color: #f2f2f2; /* Background color behind the form */
+  padding: 20px; /* Add padding to create space around the column */
+}

@@ -1,0 +1,258 @@
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+
+  }
+}
+
+/*---------------------------Imported Font----------------------------------*/
+/* Import the Cabin font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+
+
+* {
+  box-sizing: border-box;
+  /*border-box tells the browser to account for any border and padding in the values you specify for an element's width and height*/
+}
+
+/*STYLING THE BODY*/
+body {
+  	font-family: 'Cabin', sans-serif;
+  	padding: 0;/*getting rid of default margin and padding - ensures no white spaces either side of navbar etc*/
+  	margin: 0;
+  	background: white;
+}
+/*---------------------------navbar-----------------------------------------*/
+/*EXIT + LOGIN + HOME SYMBOL IN NAVBAR*/
+.exit-icon, .login-icon, .home-icon{
+  	height: 16px;
+  	width: 16px;
+  	position: relative;
+  	top: 5px;
+}
+/*ARROW ON NAVBAR*/
+.arrow {
+  	height: 16px;
+  	width: 16px;
+  	position: relative;
+  	top: 5px;
+  	z-index: 2;
+}
+/* ROTATE ON HOVER */
+.dropbtn:hover .arrow {
+  transform: rotate(90deg);
+}
+	
+/*TOP NAVBAR*/
+.navbar {
+	 overflow: hidden;
+	 background-color: #dfdfdf;/*#2B7A78;*/
+	 /*padding: 20px 0;making navbar thicker*/
+	 display: flex;
+	 justify-content: space-around;
+	 margin-top: -35px; /*moves navbar up by pixels*/
+	padding: 0;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  font-size: 16px;
+  font-family: 'Cabin', sans-serif;
+  color: #2B7A78;
+  /*#DEF2F1 ;*/
+  text-align: center;
+  padding: 20px 20px;
+  text-decoration: none;
+
+}
+
+.dropdown {
+  float: left;/*dropdpwn menu aligned next to each other*/
+  overflow: hidden;/* so dropdown content won't take up space when its not visible*/
+}
+
+
+/*DROPDOWN +DROPDOWNBTN*/
+.dropdown .dropbtn {
+
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: #2B7A78;
+  padding: 20px 20px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+
+/*style the navbar link and dropdown buttons on hover*/
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+  background-color: #afafaf;
+  color: #2B7A78;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #dfdfdf;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);/*adds shadow effect*/
+  z-index: 1;/*sets the stack order of dropddown content*/
+}
+
+.dropdown-content a {
+  float: none;
+  color: #2B7A78;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #afafaf;
+}
+
+/* makes dropdown-content visible when user hovers over the .dropdown  bys etting display to block*/
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/*---------------------------Header-----------------------------------------*/
+
+.header {
+	padding: 5px 0; /* Adjust padding to reduce header height */
+  	margin-bottom: 0; /* Ensure no additional margin */
+}
+
+
+.header,
+.header h1 {
+  	font-family: 'Cabin', sans-serif;/*imported - easy to read font*/
+  	background: white;
+	/*background:#bfeeeb;*/
+  	color: #2B7A78;/*text colour*/
+  	font-size: 1.5em;/*font size*/
+  	text-align: center;/*centered text*/
+  	padding-top: 10px;/*small bit of space from top*/
+  	margin-top: 0px;
+  	padding-bottom: 5px;/*to reduce size of header*/
+}
+
+/*LOGO - TOP LHS OF HEADER*/
+.logo {
+	position: absolute;
+  	top: 10px;
+  	left: 20px;
+  	width: 80px;
+  	height: 80px;
+}
+
+/*---------------------------Column Styling(gradient background)------------------*/
+.column {
+  	background: linear-gradient(to top,#19aca4, #bfeeeb);
+	padding: 20px;/*this padding just has the effect as moving the form down a small bit*/
+}
+
+/*---------------------------Help Button-----------------------------------*/
+/*HELP BUTTON IMAGE- BOTTOM RHS*/
+.help-button {
+  	position: fixed;/*fixed position so it stays in the same place when scrolling*/
+  	bottom: 10px;
+  	right: 20px;
+  	width: 60px;
+  	height: 60px;
+}
+
+
+
+/*--------------------------Form styling----------------------------------*/
+
+
+
+/*Actual Form container*/
+
+.returnCar {
+  background-color: #fff; /* White background */
+  padding: 15px 30px; /* Increased padding on the left and right side */
+  border-radius: 8px; /* rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* subtle shadow */
+  max-width: 400px; /* Set maximum width to limit the size of the form */
+  margin: 0 auto; /* Center the form horizontally */
+  font-family: 'Cabin', sans-serif; /* Set font family to Cabin */
+}
+
+/*FORM HEADINGS*/
+.returnCar h2 {
+  color: #2B7A78;
+  font-family: 'Cabin', sans-serif;
+  font-size: 24px;
+  text-align: center;
+}
+
+.returnCar .form-group {
+  margin-bottom: 15px;
+}
+
+/*FORM LABELS*/
+.returnCar label {
+  display: block;
+  font-weight: normal; /* Set font weight to normal */
+  font-size: 18px; /* Set font size for labels */
+}
+
+/*FORM INPUTS*/
+.returnCar input[type="text"] {
+  width: calc(100% - 16px); /* Adjust width to account for padding and border */
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #2B7A78;
+  border-radius: 4px;
+  font-size: 16px; /* Set font size for input boxes */
+}
+
+
+/*-------------------------Buttons----------------------------*/
+.returnCar .button-group {
+  margin-top: 20px;
+  text-align:center;
+}
+
+.returnCar button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size:16px;
+}
+
+.returnCar button[type="submit"] {
+  margin-right: 8px;
+  background-color: #2B7A78;/*darker green colour*/
+  color: #DEF2F1;/*lighter teal green colour*/
+}
+
+.returnCar button[type="reset"] {
+  background-color: #dc3545;/*red colour*/
+  color:#DEF2F1;
+  padding: 8px 16px; 
+}
+
+/* Button hover effect */
+.returnCar button[type="submit"]:hover {
+  background-color: #DEF2F1; /* Swap background colour */
+  color: #2B7A78; /* Swap text colour */
+}
+
+/* Button hover effect */
+.returnCar button[type="reset"]:hover {
+  background-color: #DEF2F1; /* Swap background colour */
+  color: #dc3545; /* Swap text colour */
+}

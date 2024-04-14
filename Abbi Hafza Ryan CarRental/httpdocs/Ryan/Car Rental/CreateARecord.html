@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+    Ryan Dunne
+    C00263405
+    13/02/2024
+-->
+
+<html id="background">
+    <head>
+    <title>Add a Student</title>
+    <link rel="stylesheet" href="form3Astyle.css"/> <!--Imported CSS-->
+    <script src="CreateARecord.js"></script>   <!--Imported Javascript-->
+    </head>
+    <body>
+
+        <form action="CreateARecord.php" method="post" class="flexContainer" id="form1">  <!--Where data is sent using POST Method-->
+            <div class = "formbanner">
+
+            <h3>Add A Record to the persons Database</h3>   <!--Form box title-->
+
+            </div>
+
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname" placeholder="John Doe"  required pattern="[A-Z a-z]{2,}"><br><br>
+
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname" required pattern="[A-Z a-z]{2,}"><br><br> <!--Form Inputs with appropriate regex-->
+
+            <label for="dob">Date Of Birth:</label>
+            <input type="date" id="dob" name="dob"><br><br>
+
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone" placeholder="089555123" pattern="[0-9 ]{7,}"><br><br>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" pattern=""><br><br>
+
+            <input type="Submit" value="Submit" id="submit" onclick="areYouSureYouWanttoEnterTheRecordYouJustTypedIntoTheForm()"> <input type="reset" value="Clear" id="reset">
+        </div> <!--Confirms you want to submit the form-->
+        </div>
+
+
+
+
+
+        </form>
+    </body>
+</html>

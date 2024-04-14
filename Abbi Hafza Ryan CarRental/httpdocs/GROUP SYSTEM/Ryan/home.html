@@ -1,0 +1,55 @@
+<!--
+•	Name of screen: home.html 
+•	Purpose of screen: This file contains the main menu which will be able to navigate to all of our screens
+•	linked to homeStyle.css
+•	|Student name:Abigail Murray|Student Number:C00260073 |Date: March 2024|
+•	|Student name:Ryan Dunne |Student Number:C00263405 |Date: March 2024|
+•	|Student name: Hafza|Student Number:C00286249 |Date: March 2024|
+-->
+<!--
+LINKS ON LHS(left side) OF MENU ARE THE SCREENS WE HAVE BEEN ASSIGNED,
+LINKS ON RHS ARE SCREENS WE HAVE NOT BEEN ASSIGNED
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"> <!--specifying character encoding for html docu-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--defining the viewport to control the page's dimensions and scaling for different devices:-->
+  <!-- LINKING CSS Styles sheet-->
+  <link rel="stylesheet" href="homeStyle.css">
+  <title>GoDrive | Start-up </title>
+</head>
+
+<body>
+<!--HEADER INCLUDES TITLE OF PAGE, LOGO, HELP BUTTON-->
+  <div class="header">
+  <h1>Welcome to GoDrive</h1>
+  <a href="Help.html"><img class="help-button" alt="help-button" src="images/helpbutton.png"></a>
+  <img class="logo" alt="logo" src="images/godrivelogo.png">
+  </div>
+  
+<!--MENU-->
+  <div class="column"><!--opening div:column-->
+  <div class="menu"><!--opening div:MENU-->
+  <h2>Main Menu</h2>
+  	<ul>
+		<li><a href="Abbi/carMenu.html.php">Car Menu</a></li><!--LHS-->
+		<li><a href="#">Payments</a></li><!--RHS-->
+        <li><a href="#">Car Type Menu</a></li><!--LHS-->
+		<li><a href="#">Blacklist Menu</a></li><!--RHS-->
+		<li><a href="#">Company Menu</a></li><!--LHS-->
+		<li><a href="Ryan/CompanyMenu.html">File Maintenance Menu</a></li>
+		<li><a href="Ryan/Rental.html.php">Rentals</a></li><!--LHS-->
+		<li><a href="#">Set-Up Menu</a></li><!--RHS-->
+		<li><a href="#">Rental Report</a></li><!--LHS-->
+		<li><a href="#">Reports Menu</a></li><!--RHS-->
+		<li><a href="Abbi/Returns.html.php">Returns</a></li><!--LHS-->
+         <li><a href="#">Exit</a></li><!--RHS-->
+    </ul>
+  </div><!--closing div:menu-->
+  </div><!--closing div:column-->
+ 
+</body>
+</html>
